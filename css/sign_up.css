@@ -16,41 +16,42 @@
             padding: 20px;
         }
 
-        .login-container {
+        .signup-container {
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
             padding: 40px;
             transform: translateY(0);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
         }
 
-        .login-container:hover {
+        .signup-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .login-header {
+        .signup-header {
             text-align: center;
             margin-bottom: 30px;
             position: relative;
         }
 
-        .login-header h1 {
+        .signup-header h1 {
             color: #1e8449;
             font-size: 28px;
             font-weight: 600;
             margin-bottom: 10px;
         }
 
-        .login-header p {
+        .signup-header p {
             color: #666;
             font-size: 14px;
         }
 
-        .login-header::after {
+        .signup-header::after {
             content: '';
             position: absolute;
             bottom: -15px;
@@ -62,12 +63,23 @@
             border-radius: 3px;
         }
 
-        .input-group {
-            position: relative;
-            margin-bottom: 25px;
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
-        .input-group input {
+        .form-group {
+            flex: 1;
+            position: relative;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input, .input-group select {
             width: 100%;
             padding: 15px 15px 15px 45px;
             border: 2px solid #ddd;
@@ -77,7 +89,7 @@
             outline: none;
         }
 
-        .input-group input:focus {
+        .input-group input:focus, .input-group select:focus {
             border-color: #1e8449;
         }
 
@@ -90,44 +102,67 @@
             transition: all 0.3s ease;
         }
 
-        .input-group input:focus + i {
+        .input-group input:focus + i, .input-group select:focus + i {
             color: #1e8449;
         }
 
-        .options {
+        .photo-upload {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .photo-upload-label {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .photo-upload-label:hover {
+            transform: translateY(-3px);
+        }
+
+        .photo-preview {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            overflow: hidden;
+            border: 3px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .photo-preview:hover {
+            border-color: #1e8449;
+        }
+
+        .photo-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .photo-icon {
+            font-size: 30px;
+            color: #888;
+        }
+
+        .photo-text {
+            color: #666;
             font-size: 14px;
         }
 
-        .remember-me {
-            display: flex;
-            align-items: center;
+        .photo-upload input[type="file"] {
+            display: none;
         }
 
-        .remember-me input {
-            margin-right: 8px;
-            accent-color: #1e8449;
-        }
-
-        .remember-me label {
-            color: #666;
-        }
-
-        .forgot-password a {
-            color: #1e8449;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .forgot-password a:hover {
-            color: #0a3d1a;
-            text-decoration: underline;
-        }
-
-        .login-button {
+        .signup-button {
             width: 100%;
             padding: 15px;
             background: linear-gradient(to right, #1e8449, #0a3d1a);
@@ -139,33 +174,34 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(30, 132, 73, 0.4);
+            margin-top: 10px;
         }
 
-        .login-button:hover {
+        .signup-button:hover {
             background: linear-gradient(to right, #0a3d1a, #1e8449);
             box-shadow: 0 6px 20px rgba(30, 132, 73, 0.6);
             transform: translateY(-2px);
         }
 
-        .login-button:active {
+        .signup-button:active {
             transform: translateY(0);
         }
 
-        .signup-link {
+        .login-link {
             text-align: center;
             margin-top: 25px;
             font-size: 14px;
             color: #666;
         }
 
-        .signup-link a {
+        .login-link a {
             color: #1e8449;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        .signup-link a:hover {
+        .login-link a:hover {
             color: #0a3d1a;
             text-decoration: underline;
         }
@@ -189,18 +225,17 @@
         }
 
         /* Responsive adjustments */
-        @media (max-width: 480px) {
-            .login-container {
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .signup-container {
                 padding: 30px 20px;
             }
             
-            .login-header h1 {
+            .signup-header h1 {
                 font-size: 24px;
-            }
-            
-            .options {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
             }
         }

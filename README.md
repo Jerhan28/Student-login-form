@@ -116,5 +116,5 @@ Browser Support
 · Safari (latest)
 · Edge (latest)
 
-Developer
-Jerhan Taji
+#Developer
+- Jerhan Taji

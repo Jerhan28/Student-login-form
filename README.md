@@ -1,3 +1,6 @@
+# Screenshot
+![Screenshot of interactive login form]()
+
 Student Login System
 
 A modern, responsive student login interface with password recovery functionality.

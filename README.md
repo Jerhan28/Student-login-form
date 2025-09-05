@@ -1,11 +1,11 @@
 # Screenshot
-![Screenshot of interactive login form]()
+![Screenshot of interactive login form](img/IMG_20250906_004958.png)
 
-Student Login System
+# Student Login System
 
 A modern, responsive student login interface with password recovery functionality.
 
-Features
+# Features
 
 · Clean, Modern Design: Professional green-themed UI with smooth animations
 · Responsive Layout: Works on all device sizes from mobile to desktop
@@ -15,7 +15,7 @@ Features
 · Remember Me: Option to save login credentials
 · Sign Up Link: Easy access to registration page
 
-Files Structure
+# Files Structure
 
 ```
 login-system/
@@ -26,7 +26,7 @@ login-system/
 └── README.md           # This documentation file
 ```
 
-Pages Overview
+# Pages Overview
 
 1. Login Page (index.html)
 
@@ -45,7 +45,7 @@ Pages Overview
 · Success/error messages
 · Back to login link
 
-Technical Details
+# Technical Details
 
 Styling
 
@@ -75,7 +75,7 @@ Usage
 3. Click "Forgot password?" to navigate to the password recovery page
 4. Use the sign up link to create a new account (requires signUp.html)
 
-Customization
+# Customization
 
 Colors
 
@@ -103,7 +103,7 @@ transition: all 0.3s ease;
 animation: shake 0.5s;
 ```
 
-Future Enhancements
+# Future Enhancements
 
 · Backend integration for actual authentication
 · Password strength meter
@@ -112,7 +112,7 @@ Future Enhancements
 · CAPTCHA integration
 · Session management
 
-Browser Support
+# Browser Support
 
 · Chrome (latest)
 · Firefox (latest)
